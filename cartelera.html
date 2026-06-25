@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cartelera mínima</title>
+  </head>
+  <body>
+    <select data-testid="select-ciudad">
+      <option value="">-- Seleccione ciudad --</option>
+      <option value="Santa Cruz">Santa Cruz</option>
+      <option value="Sucre">Sucre</option>
+    </select>
+    <button data-testid="btn-buscar">Buscar</button>
+
+    <div id="resultados"></div>
+
+    <script>
+      document
+        .querySelector('[data-testid="btn-buscar"]')
+        .addEventListener("click", () => {
+          document.getElementById("resultados").innerHTML = `
+        <div data-testid="funcion-card">Avatar 3 - 19:00</div>
+      `;
+        });
+    </script>
+  </body>
+</html>
