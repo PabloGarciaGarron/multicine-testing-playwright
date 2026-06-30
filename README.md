@@ -24,3 +24,10 @@ npm run gherkin
 - Sistema: Git
 - Remoto: GitHub
 - CI/CD: GitHub Actions
+
+## Ramas
+
+- `main`: Código en producción
+- `develop`: Rama de integración
+- `feature/HU-XX`: Features nuevas
+- `bugfix/BUG-XX`: Correción de bugs

@@ -6,15 +6,21 @@
   "scripts": {
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
-    "gherkin": "npx cucumber-js --profile default"
+    "gherkin": "npx cucumber-js --profile default",
+    "gherkin:headed": "HEADED=true cucumber-js --profile default",
+    "lint": "eslint features/",
+    "lint:fix": "eslint features/ --fix",
+    "security": "npm audit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.61.0",
     "@cucumber/cucumber": "^9.0.0",
-    "dotenv": "^17.4.2"
+    "@playwright/test": "^1.61.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.6.0",
+    "eslint-plugin-cucumber": "^2.0.0"
   }
 }
