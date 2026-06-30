@@ -22,7 +22,7 @@ jobs:
           cache: "npm"
 
       - name: "2️⃣ Compilación - npm install"
-        run: npm install
+        run: npm ci
 
       - name: "2️⃣ Compilación - Install Playwright"
         run: npx playwright install --with-deps
