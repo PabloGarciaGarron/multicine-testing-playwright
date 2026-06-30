@@ -5,7 +5,7 @@
 
 #AC1: El usuario debe poder buscar funciones filtrando por ciudad, fecha e idioma (doblada o subtitulada).
 #AC2: La búsqueda debe requerir como mínimo el filtro de ciudad para poder ejecutarse.
-#AC3: Los resultados deben mostrarse ordenados por el horario mas proximo
+#AC3: Los resultados deben mostrarse ordenados por el horario mas proximo.
 #comando para ejecucion: npm run gherkin
 #
 
