@@ -1,0 +1,57 @@
+name: CI/CD Pipeline - Cucumber + Playwright
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  ci-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      # ===== ETAPA 1: CHECKOUT (No aparece en logs) =====
+      - name: "Checkout Code"
+        uses: actions/checkout@v3
+
+      # ===== ETAPA 2: COMPILACIÓN =====
+      - name: "2️⃣ Compilación - Setup Node.js"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: "2️⃣ Compilación - npm install"
+        run: npm install
+
+      - name: "2️⃣ Compilación - Install Playwright"
+        run: npx playwright install --with-deps
+
+      # ===== ETAPA 3: LINTING =====
+      - name: "3️⃣ Linting - ESLint"
+        run: npm run lint
+        continue-on-error: true
+
+      # ===== ETAPA 4: INTEGRATION TESTS =====
+      - name: "4️⃣ Integration Tests - Cucumber + Playwright"
+        run: npm run gherkin
+
+      # ===== ETAPA 5: SEGURIDAD =====
+      - name: "5️⃣ Seguridad - npm audit"
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+
+      # ===== REPORTES =====
+      - name: Upload Cucumber Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-report
+          path: test-results/
+
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report/
