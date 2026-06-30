@@ -22,7 +22,8 @@ jobs:
           cache: "npm"
 
       - name: "2️⃣ Compilación - npm install"
-        run: npm ci
+        run: rm -rf node_modules package-lock.json
+          npm install # Esto regenerará el árbol aplicando los overrides de forma estricta
 
       - name: "2️⃣ Compilación - Install Playwright"
         run: npx playwright install --with-deps
