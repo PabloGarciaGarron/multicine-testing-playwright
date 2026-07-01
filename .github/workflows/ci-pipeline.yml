@@ -37,6 +37,8 @@ jobs:
       # ===== ETAPA 4: INTEGRATION TESTS =====
       - name: "4️⃣ Integration Tests - Cucumber + Playwright"
         run: npm run gherkin
+        env:
+          CI: "true" # Esto activa headless mode en Playwright
 
       # ===== ETAPA 5: SEGURIDAD =====
       - name: "5️⃣ Seguridad - npm audit"
