@@ -22,7 +22,9 @@ jobs:
           cache: "npm"
 
       - name: "2️⃣ Compilación - npm install"
-        run: rm -rf node_modules package-lock.json && npm install # Esto regenerará el árbol aplicando los overrides de forma estricta
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: "2️⃣ Compilación - Install Playwright"
         run: npx playwright install --with-deps
@@ -48,7 +50,7 @@ jobs:
         with:
           name: cucumber-report
           path: test-results/
-          if-no-files-found: ignore # Evita que falle si la carpeta está vacía
+          if-no-files-found: ignore
 
       - name: Upload Playwright Report
         if: always()
@@ -56,4 +58,4 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-          if-no-files-found: ignore # Evita que falle si la carpeta está vacía
+          if-no-files-found: ignore

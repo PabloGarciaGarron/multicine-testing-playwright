@@ -12,7 +12,7 @@
 #---------------------BDD--------------------------------------------------
 Feature: Búsqueda y filtrado de funciones
 
-  Como cliente del cineeeee
+  Como cliente del cine
   Quiero buscar funciones por ciudad, cine, fecha e idioma
   Para encontrar rápidamente el horario que me conviene
 
