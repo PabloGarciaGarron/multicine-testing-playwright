@@ -39,6 +39,7 @@ jobs:
         run: npm run gherkin
         env:
           CI: "true" # Esto activa headless mode en Playwright
+          PLAYWRIGHT_VIEWPORT: '{"width": 375, "height": 812}'
 
       # ===== ETAPA 5: SEGURIDAD =====
       - name: "5️⃣ Seguridad - npm audit"
