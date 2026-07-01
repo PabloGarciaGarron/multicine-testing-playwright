@@ -9,12 +9,6 @@ Given("abro la página principal de Multicine", async function () {
 });
 
 When("selecciono la ciudad {string}", async function (city) {
-  // En CI/CD, marcar como pendiente
-
-  if (process.env.CI) {
-    return "pending";
-  }
-
   const selector = ".navselectwrap.is-location.is-mobile";
 
   await this.page.waitForSelector(selector, { timeout: 60000 });
@@ -38,10 +32,6 @@ Then(
   "debería ver la opción de {string} en el filtro de ubicación",
 
   async function (city) {
-    if (process.env.CI) {
-      return "pending";
-    }
-
     const selectionText = await this.page.textContent(
       "body > div.page-wrap-container > div.nav > div > div.bottom-nav_container > div > div > div.locationDropdown.undefined",
     );
