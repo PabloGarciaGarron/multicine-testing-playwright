@@ -9,9 +9,9 @@ Given("abro la página principal de Multicine", async function () {
 
 When("selecciono la ciudad {string}", async function (city) {
   // En CI/CD, marcar como pendiente
-  if (process.env.CI) {
-    return "pending";
-  }
+  //if (process.env.CI) {
+  //return "pending";
+  //}
 
   const selector = ".navselectwrap.is-location.is-mobile";
   await this.page.waitForSelector(selector, { timeout: 60000 });
