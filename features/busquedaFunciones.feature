@@ -29,7 +29,7 @@ Scenario: Buscar funciones por ciudad - La Paz
     Scenario: Buscar funciones por ciudad - El Alto
     Given abro la página principal de Multicine
     When selecciono la ciudad "El Alto"
-    Then debería ver la opción de "La Paz" en el filtro de ubicación
+    Then debería ver la opción de "El Alto" en el filtro de ubicación
 
 
     Scenario: Warning para seleccionar una ciudad
