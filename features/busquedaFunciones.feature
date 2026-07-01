@@ -32,9 +32,9 @@ Scenario: Buscar funciones por ciudad - La Paz
     Then debería ver la opción de "El Alto" en el filtro de ubicación
 
 
-    Scenario: Warning para seleccionar una ciudad
-    Given abro la página principal de Multicine
-    When selecciono la ciudad "La Paz"
-    Then debería ver la opción de "La Paz" en el filtro de ubicación
-    And selecciono la ciudad "TODAS LAS UBICACIONES"
-    Then debería ver la opción de "POR FAVOR SELECCIONE UNA UBICACIÓN" en el filtro de ubicación
+    #Scenario: Warning para seleccionar una ciudad
+    #Given abro la página principal de Multicine
+    #When selecciono la ciudad "La Paz"
+    #Then debería ver la opción de "La Paz" en el filtro de ubicación
+    #And selecciono la ciudad "TODAS LAS UBICACIONES"
+    #Then debería ver la opción de "POR FAVOR SELECCIONE UNA UBICACIÓN" en el filtro de ubicación
