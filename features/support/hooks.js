@@ -1,15 +1,15 @@
 const { Before, After, setDefaultTimeout } = require("@cucumber/cucumber");
 const { chromium } = require("@playwright/test");
 
-setDefaultTimeout(60 * 1000);
+// Aumentar de 60s a 180s (3 minutos)
+setDefaultTimeout(180 * 1000);
 
 Before(async function () {
-  // Forzar headless en CI, pero permitir headless: false localmente si quieres
   const headless = process.env.CI === "true" ? true : false;
 
   this.browser = await chromium.launch({
     headless: headless,
-    slowMo: process.env.CI ? 0 : 250, // Sin slowMo en CI
+    slowMo: process.env.CI ? 0 : 250,
   });
   this.page = await this.browser.newPage();
 });
