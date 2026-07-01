@@ -10,8 +10,7 @@ Given("abro la página principal de Multicine", async function () {
 When("selecciono la ciudad {string}", async function (city) {
   // En CI/CD, marcar como pendiente
   if (process.env.CI) {
-    this.pending("Test skipped en CI/CD - sitio tiene protección anti-bot");
-    return;
+    return "pending";
   }
 
   const selector = ".navselectwrap.is-location.is-mobile";
@@ -30,8 +29,7 @@ Then(
   "debería ver la opción de {string} en el filtro de ubicación",
   async function (city) {
     if (process.env.CI) {
-      this.pending("Test skipped en CI/CD");
-      return;
+      return "pending";
     }
 
     const selectionText = await this.page.textContent(
