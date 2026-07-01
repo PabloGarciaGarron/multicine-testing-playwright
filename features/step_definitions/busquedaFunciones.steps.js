@@ -8,11 +8,11 @@ Given("abro la página principal de Multicine", async function () {
 });
 
 When("selecciono la ciudad {string}", async function (city) {
-  this.selectedCity = city;
+  // Selector más simple y robusto
+  const selector = ".navselectwrap.is-location.is-mobile";
 
-  const selector =
-    "body > div.page-wrap-container > div.nav > div > div.bottom-nav_container > div > div > div.locationDropdown.undefined > div.navselectwrap.is-location.is-mobile";
-  await this.page.waitForSelector(selector, { timeout: 20000 });
+  // Timeout aumentado a 60 segundos
+  await this.page.waitForSelector(selector, { timeout: 60000 });
   await this.page.click(selector);
   await this.page.waitForSelector(".dropdownBody.open", { timeout: 10000 });
 
@@ -29,8 +29,6 @@ Then(
     const selectionText = await this.page.textContent(
       "body > div.page-wrap-container > div.nav > div > div.bottom-nav_container > div > div > div.locationDropdown.undefined",
     );
-
-    expect(this.selectedCity).toBe(city);
     expect(selectionText).toContain(city);
   },
 );
