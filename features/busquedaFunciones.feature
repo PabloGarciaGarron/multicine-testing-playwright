@@ -12,7 +12,7 @@
 #---------------------BDD--------------------------------------------------
 Feature: Búsqueda y filtrado de funciones
 
-  Como cliente del cine
+  Como cliente del cineeeee
   Quiero buscar funciones por ciudad, cine, fecha e idioma
   Para encontrar rápidamente el horario que me conviene
 
@@ -28,7 +28,7 @@ Scenario: Buscar funciones por ciudad - La Paz
 
     Scenario: Buscar funciones por ciudad - El Alto
     Given abro la página principal de Multicine
-    When selecciono la ciudad "El Alto"
+    When selecciono la ciudad "El Alt"
     Then debería ver la opción de "El Alto" en el filtro de ubicación
 
 
