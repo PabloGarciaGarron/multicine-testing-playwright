@@ -1,12 +1,14 @@
 const { defineConfig } = require("@playwright/test");
 
+const isCI = !!process.env.CI;
+
 module.exports = defineConfig({
   use: {
-    headless: process.env.CI ? true : false,
+    headless: true, // ✅ SIEMPRE headless en CI/CD
     baseURL: "https://www.multicine.com.bo",
     navigationTimeout: 30000,
     actionTimeout: 15000,
   },
   timeout: 60000,
-  retries: process.env.CI ? 1 : 0, // Reintentar en CI si falla
+  retries: isCI ? 1 : 0,
 });
